@@ -14,8 +14,8 @@
 
         body {
             font-family: 'Cormorant Garamond', serif;
-            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
-            color: #e8e8e8;
+            background: linear-gradient(135deg, #fff8fc 0%, #fffafb 50%, #fdf5ff 100%);
+            color: #333;
             line-height: 1.8;
             overflow-x: hidden;
             position: relative;
@@ -35,11 +35,12 @@
 
         .particle {
             position: absolute;
-            width: 2px;
-            height: 2px;
-            background: rgba(212, 175, 55, 0.5);
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 105, 180, 0.6);
             border-radius: 50%;
             animation: float 20s infinite linear;
+            box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
         }
 
         @keyframes float {
@@ -74,16 +75,15 @@
             position: absolute;
             width: 40px;
             height: 40px;
-            opacity: 0.6;
+            opacity: 0.8;
             animation: fall linear infinite;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+            filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.3));
         }
 
         .leaf::before {
-            content: '🍂';
+            content: 🌸';
             position: absolute;
             font-size: 2.5em;
-            filter: hue-rotate(20deg) saturate(1.2);
         }
 
         @keyframes fall {
@@ -92,23 +92,14 @@
                 opacity: 0;
             }
             10% {
-                opacity: 0.6;
+                opacity: 0.8;
             }
             90% {
-                opacity: 0.6;
+                opacity: 0.8;
             }
             100% {
                 transform: translateY(100vh) rotateZ(360deg);
                 opacity: 0;
-            }
-        }
-
-        @keyframes sway {
-            0%, 100% {
-                transform: translateX(0px);
-            }
-            50% {
-                transform: translateX(30px);
             }
         }
 
@@ -119,7 +110,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+            background: linear-gradient(135deg, #fff8fc 0%, #fffafb 50%, #fdf5ff 100%);
             z-index: 9999;
             display: flex;
             align-items: center;
@@ -130,10 +121,10 @@
         .envelope {
             width: 300px;
             height: 200px;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            border: 2px solid #d4af37;
+            background: white;
+            border: 2px solid #ff1493;
             border-radius: 5px;
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3), 0 0 30px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3), 0 0 30px rgba(255, 192, 203, 0.4);
             position: relative;
             animation: slideUp 0.8s ease-out;
         }
@@ -144,22 +135,11 @@
             left: 0;
             width: 100%;
             height: 50%;
-            background: linear-gradient(135deg, #d4af37, #e6c200);
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
             border-radius: 5px 5px 0 0;
             transform-origin: top;
             animation: flapOpen 1.5s ease-out 0.5s forwards;
-            box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .envelope-flap::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent);
-            border-radius: 5px 5px 0 0;
+            box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .envelope-flap::after {
@@ -179,9 +159,9 @@
             left: 0;
             width: 100%;
             height: 50%;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            background: white;
             border-radius: 0 0 5px 5px;
-            border-top: 2px dashed #d4af37;
+            border-top: 2px dashed #ff1493;
         }
 
         .letter {
@@ -191,10 +171,10 @@
             transform: translate(-50%, -50%);
             width: 280px;
             height: 160px;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            background: white;
             border-radius: 3px;
             padding: 20px;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
             text-align: center;
             opacity: 0;
             animation: letterPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.8s forwards;
@@ -203,7 +183,7 @@
 
         .letter-text {
             font-size: 0.9em;
-            color: #d4af37;
+            color: #ff1493;
             font-weight: 600;
             letter-spacing: 1px;
         }
@@ -289,10 +269,10 @@
         header {
             text-align: center;
             padding: 80px 20px 60px;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-            border: 2px solid rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.1) 0%, rgba(255, 192, 203, 0.12) 100%);
+            border: 2px solid rgba(255, 105, 180, 0.25);
             border-radius: 0 0 50px 50px;
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.7);
             margin-bottom: 60px;
             backdrop-filter: blur(10px);
         }
@@ -300,9 +280,9 @@
         .decorative-line {
             width: 100px;
             height: 3px;
-            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            background: linear-gradient(90deg, transparent, #ff69b4, transparent);
             margin: 0 auto 30px;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
         }
 
         /* Selin Nur & Muhammet - İhtişamlı Font */
@@ -310,23 +290,24 @@
             font-family: 'Playfair Display', serif;
             font-size: 5em;
             font-weight: 900;
-            background: linear-gradient(135deg, #d4af37 0%, #e6c200 50%, #d4af37 100%);
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 50%, #ff1493 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin: 40px 0;
             letter-spacing: 4px;
-            text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
             line-height: 1.1;
             animation: glow 3s ease-in-out infinite;
         }
 
         @keyframes glow {
             0%, 100% {
-                text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+                text-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+                filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.3));
             }
             50% {
-                text-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+                text-shadow: 0 0 30px rgba(255, 105, 180, 0.6);
+                filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.5));
             }
         }
 
@@ -337,18 +318,18 @@
         .ampersand {
             font-family: 'Cormorant Garamond', serif;
             font-size: 4em;
-            color: #d4af37;
+            color: #ff69b4;
             margin: 0 30px;
             font-style: italic;
             font-weight: 300;
             display: block;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            text-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
         }
 
         .invitation-text {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5em;
-            color: #c0c0c0;
+            color: #666;
             margin-top: 25px;
             font-style: italic;
             font-weight: 300;
@@ -357,22 +338,26 @@
 
         /* Geri Sayım */
         .countdown-section {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-            border: 2px solid rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.08) 0%, rgba(255, 192, 203, 0.1) 100%);
+            border: 2px solid rgba(255, 105, 180, 0.2);
             border-radius: 20px;
             padding: 50px 30px;
             margin: 50px 0;
             text-align: center;
             backdrop-filter: blur(10px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.08);
         }
 
         .countdown-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.5em;
-            color: #d4af37;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 30px;
             letter-spacing: 2px;
+            font-weight: 700;
         }
 
         .countdown {
@@ -384,34 +369,39 @@
         }
 
         .countdown-item {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border: 2px solid #d4af37;
+            background: linear-gradient(135deg, #fff5f9 0%, #fff0f5 100%);
+            border: 2px solid #ff69b4;
             border-radius: 15px;
             padding: 25px 15px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.12);
             transition: all 0.3s;
         }
 
         .countdown-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
-            border-color: #e6c200;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.25);
+            border-color: #ff1493;
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
         }
 
         .countdown-number {
             font-family: 'Playfair Display', serif;
             font-size: 2.5em;
             font-weight: 900;
-            color: #d4af37;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 10px;
         }
 
         .countdown-label {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.9em;
-            color: #a0a0a0;
+            color: #999;
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-weight: 600;
         }
 
         .events {
@@ -422,11 +412,11 @@
         }
 
         .event-card {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-            border: 2px solid rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, #fffbfe 0%, #fff5f9 100%);
+            border: 2px solid rgba(255, 105, 180, 0.2);
             border-radius: 20px;
             padding: 45px;
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.1);
             transition: all 0.3s;
             backdrop-filter: blur(10px);
             position: relative;
@@ -439,19 +429,22 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ff69b4, transparent);
         }
 
         .event-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.25);
-            border-color: #d4af37;
+            box-shadow: 0 25px 50px rgba(255, 105, 180, 0.2);
+            border-color: #ff1493;
         }
 
         .event-card h2 {
             font-family: 'Playfair Display', serif;
-            color: #d4af37;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 2.2em;
             margin-bottom: 30px;
             font-weight: 700;
@@ -461,7 +454,7 @@
         .event-detail {
             margin: 25px 0;
             padding: 18px 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(255, 105, 180, 0.1);
         }
 
         .event-detail:last-child {
@@ -471,7 +464,10 @@
         .detail-label {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            color: #d4af37;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 0.85em;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -480,7 +476,7 @@
 
         .detail-value {
             font-family: 'Cormorant Garamond', serif;
-            color: #e8e8e8;
+            color: #333;
             font-size: 1.3em;
             font-weight: 400;
         }
@@ -489,8 +485,8 @@
             display: inline-block;
             margin-top: 25px;
             padding: 14px 40px;
-            background: linear-gradient(135deg, #d4af37, #e6c200);
-            color: #0f0f1e;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            color: white;
             border: none;
             border-radius: 30px;
             cursor: pointer;
@@ -500,12 +496,12 @@
             transition: all 0.3s;
             text-decoration: none;
             letter-spacing: 1.5px;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.25);
         }
 
         .map-button:hover {
             transform: scale(1.08);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
         }
 
         .map-button:active {
@@ -513,19 +509,22 @@
         }
 
         .family-section {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-            border: 2px solid rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.08) 0%, rgba(255, 192, 203, 0.1) 100%);
+            border: 2px solid rgba(255, 105, 180, 0.2);
             border-radius: 20px;
             padding: 50px;
             margin-top: 60px;
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.08);
             backdrop-filter: blur(10px);
         }
 
         .family-section h2 {
             text-align: center;
             font-family: 'Playfair Display', serif;
-            color: #d4af37;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 2.5em;
             margin-bottom: 40px;
             font-weight: 700;
@@ -539,23 +538,27 @@
         }
 
         .family-card {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #fffbfe 0%, #fff5f9 100%);
             padding: 30px;
             border-radius: 15px;
-            border-left: 4px solid #d4af37;
+            border-left: 4px solid #ff69b4;
             transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
         }
 
         .family-card:hover {
             transform: translateX(10px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
+            border-left-color: #ff1493;
         }
 
         .family-name {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.4em;
-            color: #d4af37;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-weight: 700;
             margin-bottom: 15px;
             letter-spacing: 1px;
@@ -563,7 +566,7 @@
 
         .family-phone {
             font-family: 'Montserrat', sans-serif;
-            color: #c0c0c0;
+            color: #666;
             font-size: 1em;
             display: flex;
             align-items: center;
@@ -571,22 +574,25 @@
         }
 
         .family-phone a {
-            color: #d4af37;
+            color: #ff69b4;
             text-decoration: none;
             transition: all 0.3s;
+            font-weight: 600;
         }
 
         .family-phone a:hover {
-            color: #e6c200;
+            color: #ff1493;
         }
 
         .phone-icon {
-            color: #d4af37;
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-right: 12px;
             font-size: 1.3em;
         }
 
-        /* Ses Kontrolü Butonu */
         .audio-control {
             position: fixed;
             bottom: 30px;
@@ -595,10 +601,10 @@
             width: 70px;
             height: 70px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #d4af37, #e6c200);
-            border: 3px solid rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            border: 3px solid white;
             cursor: pointer;
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 10px 40px rgba(255, 105, 180, 0.35);
             transition: all 0.3s;
             display: flex;
             align-items: center;
@@ -608,7 +614,7 @@
 
         .audio-control:hover {
             transform: scale(1.15);
-            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.7);
+            box-shadow: 0 15px 50px rgba(255, 105, 180, 0.5);
         }
 
         .audio-control:active {
@@ -668,22 +674,18 @@
         footer {
             text-align: center;
             padding: 40px;
-            color: #808080;
+            color: #999;
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.2em;
             margin-top: 60px;
-            border-top: 2px solid rgba(212, 175, 55, 0.2);
+            border-top: 2px solid rgba(255, 105, 180, 0.1);
         }
     </style>
 </head>
 <body>
-    <!-- Particle Efekti -->
     <div class="particles" id="particlesContainer"></div>
-
-    <!-- Yapraklar Arka Planı -->
     <div class="falling-leaves" id="fallingLeavesContainer"></div>
 
-    <!-- Giriş Efekti - Davetiye Zarfı -->
     <div class="envelope-wrapper">
         <div class="envelope">
             <div class="envelope-flap"></div>
@@ -697,21 +699,17 @@
         </div>
     </div>
 
-    <!-- Ana İçerik -->
     <div class="container">
         <header>
             <div class="decorative-line"></div>
-            
             <div class="names">
                 <strong>Selin Nur</strong>
                 <span class="ampersand">&</span>
                 <strong>Muhammet</strong>
             </div>
-            
             <p class="invitation-text">Hayatımızın en özel günümüzde sizleri aramızda görmekten mutluluk duyacağız</p>
         </header>
 
-        <!-- Geri Sayım -->
         <div class="countdown-section">
             <div class="countdown-title">💍 Nikah Törenine Kalan Süre</div>
             <div class="countdown">
@@ -735,7 +733,6 @@
         </div>
 
         <div class="events">
-            <!-- Nikah Kartı -->
             <div class="event-card">
                 <h2>💍 Nikah Törenimiz</h2>
                 
@@ -761,7 +758,6 @@
                 </button>
             </div>
 
-            <!-- Düğün Kartı -->
             <div class="event-card">
                 <h2>🎉 Düğün Davetimiz</h2>
                 
@@ -792,7 +788,7 @@
             <h2>📞 İletişim Bilgileri</h2>
             <div class="family-grid">
                 <div class="family-card">
-                    <div class="family-name">👰 Selin Nur</div>
+                    <div class="family-name">Tahsin Erdoğdu</div>
                     <div class="family-phone">
                         <span class="phone-icon">☎️</span>
                         <a href="tel:+905383483012">0538 348 30 12</a>
@@ -800,7 +796,7 @@
                 </div>
 
                 <div class="family-card">
-                    <div class="family-name">🤵 Muhammet</div>
+                    <div class="family-name">Halil Çetin</div>
                     <div class="family-phone">
                         <span class="phone-icon">☎️</span>
                         <a href="tel:+905373040728">0537 304 07 28</a>
@@ -814,12 +810,10 @@
         <p>✨ Sevgiyle Davet Ediyoruz ✨</p>
     </footer>
 
-    <!-- Ses Kontrolü Butonu -->
     <button class="audio-control" id="audioToggle" onclick="toggleAudio()" title="Müziği Aç/Kapat">
         <span id="audioIcon">🔊</span>
     </button>
 
-    <!-- Audio Player - Gizli, Sadece Ses -->
     <audio id="audioPlayer" loop>
         <source src="https://open.spotify.com/track/5Cjs5q9HXxbGLag9IxeYjK" type="audio/mpeg">
     </audio>
@@ -851,7 +845,6 @@
             }
         }
 
-        // Geri Sayım Fonksiyonu
         function updateCountdown() {
             const weddingDate = new Date('2026-08-08T14:30:00').getTime();
             const now = new Date().getTime();
@@ -875,7 +868,6 @@
             }
         }
 
-        // Yapraklar animasyonunu başlat
         function createFallingLeaves() {
             const container = document.getElementById('fallingLeavesContainer');
             const leafCount = 8;
@@ -887,18 +879,16 @@
                 const randomLeft = Math.random() * 100;
                 const randomDelay = Math.random() * 15;
                 const randomDuration = 12 + Math.random() * 8;
-                const randomSwayDuration = 3 + Math.random() * 2;
 
                 leaf.style.left = randomLeft + '%';
                 leaf.style.animationDelay = randomDelay + 's';
                 leaf.style.animationDuration = randomDuration + 's';
-                leaf.style.animation = `fall ${randomDuration}s linear infinite, sway ${randomSwayDuration}s ease-in-out infinite`;
+                leaf.style.animation = `fall ${randomDuration}s linear infinite`;
 
                 container.appendChild(leaf);
             }
         }
 
-        // Particle Efekti
         function createParticles() {
             const container = document.getElementById('particlesContainer');
             const particleCount = 50;
@@ -920,16 +910,13 @@
             }
         }
 
-        // Sayfa yüklendiğinde
         window.addEventListener('load', function() {
             createFallingLeaves();
             createParticles();
             updateCountdown();
             
-            // Her saniye geri sayımı güncelle
             setInterval(updateCountdown, 1000);
             
-            // Müziği otomatik başlat (4 saniye sonra)
             setTimeout(() => {
                 toggleAudio();
             }, 4000);
