@@ -1,6 +1,7 @@
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SelinNur & Muhammet - Düğün Davetiyesi</title>
+    <title>Davetiye - Pembe Çiçekler</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -11,53 +12,14 @@
 
         body {
             font-family: 'Cormorant Garamond', serif;
-            background: linear-gradient(135deg, #fff8fc 0%, #fffafb 50%, #fdf5ff 100%);
+            background: linear-gradient(135deg, #fff5f7 0%, #fffaf0 50%, #fff9f0 100%);
             color: #333;
             line-height: 1.8;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Arka Plan Particle Efekti */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: rgba(255, 105, 180, 0.6);
-            border-radius: 50%;
-            animation: float 20s infinite linear;
-            box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(100px);
-                opacity: 0;
-            }
-        }
-
-        /* Yapraklar - Arka Plan Animasyonu */
+        /* Pembe Çiçekler - Arka Plan Animasyonu */
         .falling-leaves {
             position: fixed;
             top: 0;
@@ -66,33 +28,34 @@
             height: 100%;
             pointer-events: none;
             z-index: 1;
+            overflow: hidden;
         }
 
         .leaf {
             position: absolute;
             width: 40px;
             height: 40px;
-            opacity: 0.8;
+            opacity: 0.7;
             animation: fall linear infinite;
-            filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.3));
+            filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.5));
         }
 
         .leaf::before {
-            content: '🌹';
+            content: '🌸';
             position: absolute;
-            font-size: 2.5em;
+            font-size: 40px;
         }
 
         @keyframes fall {
             0% {
-                transform: translateY(-100px) rotateZ(0deg);
+                transform: translateY(-100vh) rotateZ(0deg);
                 opacity: 0;
             }
             10% {
-                opacity: 0.8;
+                opacity: 0.7;
             }
             90% {
-                opacity: 0.8;
+                opacity: 0.7;
             }
             100% {
                 transform: translateY(100vh) rotateZ(360deg);
@@ -100,94 +63,30 @@
             }
         }
 
-        /* Giriş Efekti - Davetiye Zarfı */
-        .envelope-wrapper {
+        /* Zarf Ekranı */
+        .envelope-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #fff8fc 0%, #fffafb 50%, #fdf5ff 100%);
+            background: linear-gradient(135deg, #fff5f7 0%, #fffaf0 50%, #fff9f0 100%);
             z-index: 9999;
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: fadeOutEnvelope 0.5s ease-out forwards 3.5s;
+            animation: fadeOutScreen 0.8s ease-out 4s forwards;
         }
 
         .envelope {
             width: 300px;
             height: 200px;
             background: white;
-            border: 2px solid #ff1493;
+            border: 2px solid #e794b5;
             border-radius: 5px;
-            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3), 0 0 30px rgba(255, 192, 203, 0.4);
+            box-shadow: 0 20px 60px rgba(255, 182, 193, 0.3);
             position: relative;
             animation: slideUp 0.8s ease-out;
-        }
-
-        .envelope-flap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background: linear-gradient(135deg, #ff1493, #ff69b4);
-            border-radius: 5px 5px 0 0;
-            transform-origin: top;
-            animation: flapOpen 1.5s ease-out 0.5s forwards;
-            box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .envelope-flap::after {
-            content: '💍';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2em;
-            animation: fadeInHeart 0.5s ease-out 1.2s forwards;
-            opacity: 0;
-        }
-
-        .envelope-body {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background: white;
-            border-radius: 0 0 5px 5px;
-            border-top: 2px dashed #ff1493;
-        }
-
-        .letter {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 280px;
-            height: 160px;
-            background: white;
-            border-radius: 3px;
-            padding: 20px;
-            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
-            text-align: center;
-            opacity: 0;
-            animation: letterPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.8s forwards;
-            z-index: 10;
-        }
-
-        .letter-text {
-            font-size: 0.9em;
-            color: #ff1493;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .letter-decor {
-            font-size: 1.5em;
-            margin: 10px 0;
         }
 
         @keyframes slideUp {
@@ -201,57 +100,98 @@
             }
         }
 
+        .envelope-flap {
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, #ffc0d9, #ffb6d9);
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 5px 5px 0 0;
+            transform-origin: top;
+            animation: flapOpen 1.5s ease-out 0.5s forwards;
+            box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .envelope-flap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+            border-radius: 5px 5px 0 0;
+        }
+
         @keyframes flapOpen {
-            0% {
+            from {
                 transform: rotateX(0deg);
             }
-            100% {
-                transform: rotateX(-160deg);
+            to {
+                transform: rotateX(-180deg);
             }
+        }
+
+        .envelope-body {
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 0 0 5px 5px;
+            border-top: 2px dashed #e794b5;
+        }
+
+        .letter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 280px;
+            height: 160px;
+            background: linear-gradient(135deg, #fff5f7, #fffaf0);
+            border-radius: 3px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            opacity: 0;
+            animation: letterPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.8s forwards;
+        }
+
+        .letter-text {
+            font-size: 0.9em;
+            color: #c94b6d;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         @keyframes letterPop {
-            0% {
-                transform: translate(-50%, -50%) scale(0.3);
-                opacity: 0;
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInHeart {
             from {
                 opacity: 0;
-                transform: translate(-50%, -50%) scale(0);
+                transform: translate(-50%, -100%);
             }
             to {
                 opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
+                transform: translate(-50%, -50%);
             }
         }
 
-        @keyframes fadeOutEnvelope {
+        @keyframes fadeOutScreen {
             from {
                 opacity: 1;
-                visibility: visible;
+                pointer-events: all;
             }
             to {
                 opacity: 0;
-                visibility: hidden;
+                pointer-events: none;
             }
         }
 
-        /* Ana İçerik */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
+        /* Başlangıçta Gizli */
+        .fade-in {
             animation: fadeIn 0.8s ease-out 4s forwards;
             opacity: 0;
-            position: relative;
-            z-index: 2;
         }
 
         @keyframes fadeIn {
@@ -263,195 +203,101 @@
             }
         }
 
+        /* Ana İçerik */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            animation: fadeIn 0.8s ease-out 4s forwards;
+            opacity: 0;
+            position: relative;
+            z-index: 2;
+        }
+
         header {
             text-align: center;
-            padding: 80px 20px 60px;
-            background: linear-gradient(135deg, rgba(255, 105, 180, 0.1) 0%, rgba(255, 192, 203, 0.12) 100%);
-            border: 2px solid rgba(255, 105, 180, 0.25);
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, #ffd4e5 0%, #fff9e6 100%);
             border-radius: 0 0 50px 50px;
-            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.7);
-            margin-bottom: 60px;
-            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.3);
+            margin-bottom: 40px;
         }
 
         .decorative-line {
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #ff69b4, transparent);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c94b6d, transparent);
             margin: 0 auto 30px;
-            box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
         }
 
-        /* Selin Nur & Muhammet - İhtişamlı Font */
         .names {
             font-family: 'Playfair Display', serif;
-            font-size: 5em;
-            font-weight: 900;
-            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 50%, #ff1493 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 40px 0;
-            letter-spacing: 4px;
-            line-height: 1.1;
-            animation: glow 3s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% {
-                text-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
-                filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.3));
-            }
-            50% {
-                text-shadow: 0 0 30px rgba(255, 105, 180, 0.6);
-                filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.5));
-            }
+            font-size: 4.5em;
+            font-weight: 700;
+            color: #2c1b1b;
+            margin: 30px 0;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1.2;
         }
 
         .names strong {
+            color: #c94b6d;
+            font-size: 5em;
             font-weight: 900;
         }
 
         .ampersand {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4em;
-            color: #ff69b4;
-            margin: 0 30px;
+            font-size: 3em;
+            color: #c94b6d;
+            margin: 0 20px;
             font-style: italic;
             font-weight: 300;
             display: block;
-            text-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
         }
 
         .invitation-text {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5em;
+            font-size: 1.4em;
             color: #666;
-            margin-top: 25px;
+            margin-top: 20px;
             font-style: italic;
             font-weight: 300;
-            letter-spacing: 2px;
-        }
-
-        /* Geri Sayım */
-        .countdown-section {
-            background: linear-gradient(135deg, rgba(255, 105, 180, 0.08) 0%, rgba(255, 192, 203, 0.1) 100%);
-            border: 2px solid rgba(255, 105, 180, 0.2);
-            border-radius: 20px;
-            padding: 50px 30px;
-            margin: 50px 0;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.08);
-        }
-
-        .countdown-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
-            background: linear-gradient(135deg, #ff1493, #ff69b4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-
-        .countdown {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .countdown-item {
-            background: linear-gradient(135deg, #fff5f9 0%, #fff0f5 100%);
-            border: 2px solid #ff69b4;
-            border-radius: 15px;
-            padding: 25px 15px;
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.12);
-            transition: all 0.3s;
-        }
-
-        .countdown-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.25);
-            border-color: #ff1493;
-            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
-        }
-
-        .countdown-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
-            font-weight: 900;
-            background: linear-gradient(135deg, #ff1493, #ff69b4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-        }
-
-        .countdown-label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9em;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
         }
 
         .events {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin: 60px 0;
+            gap: 30px;
+            margin: 40px 0;
         }
 
         .event-card {
-            background: linear-gradient(135deg, #fffbfe 0%, #fff5f9 100%);
-            border: 2px solid rgba(255, 105, 180, 0.2);
-            border-radius: 20px;
-            padding: 45px;
-            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.1);
-            transition: all 0.3s;
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .event-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #ff69b4, transparent);
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(255, 182, 193, 0.2);
+            border-top: 4px solid #c94b6d;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .event-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(255, 105, 180, 0.2);
-            border-color: #ff1493;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.3);
         }
 
         .event-card h2 {
             font-family: 'Playfair Display', serif;
-            background: linear-gradient(135deg, #ff1493, #ff69b4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 2.2em;
-            margin-bottom: 30px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            color: #c94b6d;
+            font-size: 2em;
+            margin-bottom: 20px;
         }
 
         .event-detail {
-            margin: 25px 0;
-            padding: 18px 0;
-            border-bottom: 1px solid rgba(255, 105, 180, 0.1);
+            margin: 15px 0;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
         }
 
         .event-detail:last-child {
@@ -460,11 +306,8 @@
 
         .detail-label {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ff1493, #ff69b4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 600;
+            color: #c94b6d;
             font-size: 0.85em;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -474,329 +317,274 @@
         .detail-value {
             font-family: 'Cormorant Garamond', serif;
             color: #333;
-            font-size: 1.3em;
-            font-weight: 400;
+            font-size: 1.2em;
+            margin-top: 5px;
         }
 
         .map-button {
             display: inline-block;
-            margin-top: 25px;
-            padding: 14px 40px;
-            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #c94b6d, #e794b5);
             color: white;
             border: none;
-            border-radius: 30px;
+            border-radius: 25px;
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
             font-size: 0.95em;
-            font-weight: 700;
+            font-weight: 600;
             transition: all 0.3s;
             text-decoration: none;
-            letter-spacing: 1.5px;
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.25);
+            letter-spacing: 1px;
         }
 
         .map-button:hover {
-            transform: scale(1.08);
-            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.4);
-        }
-
-        .map-button:active {
-            transform: scale(0.96);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(201, 75, 109, 0.4);
         }
 
         .family-section {
-            background: linear-gradient(135deg, rgba(255, 105, 180, 0.08) 0%, rgba(255, 192, 203, 0.1) 100%);
-            border: 2px solid rgba(255, 105, 180, 0.2);
-            border-radius: 20px;
-            padding: 50px;
-            margin-top: 60px;
-            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.08);
-            backdrop-filter: blur(10px);
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 5px 20px rgba(255, 182, 193, 0.2);
+            border-top: 4px solid #c94b6d;
         }
 
         .family-section h2 {
             text-align: center;
             font-family: 'Playfair Display', serif;
-            background: linear-gradient(135deg, #ff1493, #ff69b4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            color: #c94b6d;
+            font-size: 2em;
+            margin-bottom: 30px;
         }
 
         .family-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 25px;
         }
 
         .family-card {
-            background: linear-gradient(135deg, #fffbfe 0%, #fff5f9 100%);
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 4px solid #ff69b4;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
+            background: linear-gradient(135deg, #fff5f7, #fffaf0);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #c94b6d;
+            transition: transform 0.3s;
         }
 
         .family-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
-            border-left-color: #ff1493;
+            transform: translateX(5px);
         }
 
         .family-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4em;
-            background: linear-gradient(135deg, #ff1493, #ff69b4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+            font-size: 1.3em;
+            color: #c94b6d;
+            font-weight: 600;
+            margin-bottom: 10px;
         }
 
         .family-phone {
             font-family: 'Montserrat', sans-serif;
             color: #666;
-            font-size: 1em;
+            font-size: 0.95em;
             display: flex;
             align-items: center;
-            transition: all 0.3s;
         }
 
         .family-phone a {
-            color: #ff69b4;
+            color: #c94b6d;
             text-decoration: none;
             transition: all 0.3s;
-            font-weight: 600;
         }
 
         .family-phone a:hover {
-            color: #ff1493;
+            color: #e794b5;
         }
 
         .phone-icon {
-            background: linear-gradient(135deg, #ff1493, #ff69b4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-right: 12px;
-            font-size: 1.3em;
+            color: #c94b6d;
+            margin-right: 10px;
+            font-size: 1.2em;
         }
 
+        /* Ses Kontrolü Butonu */
         .audio-control {
             position: fixed;
             bottom: 30px;
             right: 30px;
             z-index: 1000;
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #ff1493, #ff69b4);
-            border: 3px solid white;
+            background: linear-gradient(135deg, #c94b6d, #e794b5);
+            border: none;
             cursor: pointer;
-            box-shadow: 0 10px 40px rgba(255, 105, 180, 0.35);
+            box-shadow: 0 5px 20px rgba(201, 75, 109, 0.4);
             transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2em;
+            font-size: 1.8em;
         }
 
         .audio-control:hover {
-            transform: scale(1.15);
-            box-shadow: 0 15px 50px rgba(255, 105, 180, 0.5);
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(201, 75, 109, 0.6);
         }
 
         .audio-control:active {
-            transform: scale(0.92);
+            transform: scale(0.95);
         }
 
         @media (max-width: 768px) {
-            .names {
-                font-size: 3em;
-                letter-spacing: 2px;
-            }
-
-            .ampersand {
-                font-size: 2.5em;
-                margin: 15px 0;
-            }
-
-            .countdown {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .countdown-number {
-                font-size: 2em;
-            }
-
             .events {
                 grid-template-columns: 1fr;
-                gap: 25px;
+                gap: 20px;
             }
 
             .family-grid {
                 grid-template-columns: 1fr;
             }
 
+            .names {
+                font-size: 2.8em;
+                letter-spacing: 2px;
+            }
+
+            .ampersand {
+                font-size: 2em;
+                margin: 10px 0;
+            }
+
+            .invitation-text {
+                font-size: 1.1em;
+            }
+
             header {
-                padding: 50px 20px;
+                padding: 40px 20px;
             }
 
             .event-card {
-                padding: 30px;
+                padding: 25px;
             }
 
             .family-section {
-                padding: 30px;
+                padding: 25px;
+            }
+
+            .envelope {
+                width: 250px;
+                height: 170px;
+            }
+
+            .letter {
+                width: 230px;
+                height: 130px;
+                padding: 15px;
             }
 
             .audio-control {
                 bottom: 20px;
                 right: 20px;
-                width: 60px;
-                height: 60px;
-                font-size: 1.6em;
+                width: 55px;
+                height: 55px;
+                font-size: 1.5em;
             }
         }
 
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 30px;
             color: #999;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2em;
-            margin-top: 60px;
-            border-top: 2px solid rgba(255, 105, 180, 0.1);
+            font-size: 1.1em;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
-    <div class="particles" id="particlesContainer"></div>
+    <!-- Pemba Çiçekler Arka Planı -->
     <div class="falling-leaves" id="fallingLeavesContainer"></div>
 
-    <div class="envelope-wrapper">
+    <!-- Zarf Ekranı -->
+    <div class="envelope-screen">
         <div class="envelope">
             <div class="envelope-flap"></div>
-            <div class="envelope-body">
-                <div class="letter">
-                    <div class="letter-decor">💌</div>
-                    <div class="letter-text">Davetiye Açılıyor...</div>
-                    <div class="letter-decor">✨</div>
-                </div>
+            <div class="envelope-body"></div>
+            <div class="letter">
+                <div class="letter-text">✨ Davetiye ✨</div>
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <!-- Ana İçerik -->
+    <div class="container fade-in">
         <header>
             <div class="decorative-line"></div>
             <div class="names">
-                <strong>Selin Nur</strong>
-                <span class="ampersand">&</span>
-                <strong>Muhammet</strong>
+                <span class="ampersand">Siz davet ediyoruz</span>
+                <strong>Evlilik Davetiyesi</strong>
             </div>
             <p class="invitation-text">Hayatımızın en özel günümüzde sizleri aramızda görmekten mutluluk duyacağız</p>
         </header>
 
-        <div class="countdown-section">
-            <div class="countdown-title">💍 Nikah Törenine Kalan Süre</div>
-            <div class="countdown">
-                <div class="countdown-item">
-                    <div class="countdown-number" id="days">0</div>
-                    <div class="countdown-label">Gün</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="hours">0</div>
-                    <div class="countdown-label">Saat</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="minutes">0</div>
-                    <div class="countdown-label">Dakika</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="seconds">0</div>
-                    <div class="countdown-label">Saniye</div>
-                </div>
-            </div>
-        </div>
-
         <div class="events">
+            <!-- Nikah Kartı -->
             <div class="event-card">
                 <h2>💍 Nikah Törenimiz</h2>
-                
                 <div class="event-detail">
-                    <div class="detail-label">📅 Tarih</div>
-                    <div class="detail-value">08 Ağustos 2026</div>
+                    <div class="detail-label">Tarih</div>
+                    <div class="detail-value">8 Ağustos 2026</div>
                 </div>
-                
                 <div class="event-detail">
-                    <div class="detail-label">🕐 Saat</div>
+                    <div class="detail-label">Saat</div>
                     <div class="detail-value">14:30</div>
                 </div>
-                
                 <div class="event-detail">
-                    <div class="detail-label">📍 Mekan</div>
-                    <div class="detail-value">
-                        Bahçelievler Belediyesi<br>Kongre ve Nikah Sarayı<br>İstanbul
-                    </div>
+                    <div class="detail-label">Mekan</div>
+                    <div class="detail-value">İlgili Lokasyon</div>
                 </div>
-
-                <button class="map-button" onclick="openMap('Istanbul Bahcelievler Belediyesi Kongre ve Nikah Sarayi')">
-                    📍 Haritada Gör
-                </button>
+                <button class="map-button" onclick="window.open('https://maps.google.com', '_blank')">Haritada Gör</button>
             </div>
 
+            <!-- Düğün Kartı -->
             <div class="event-card">
                 <h2>🎉 Düğün Davetimiz</h2>
-                
                 <div class="event-detail">
-                    <div class="detail-label">📅 Tarih</div>
-                    <div class="detail-value">11 Eylül 2026</div>
+                    <div class="detail-label">Tarih</div>
+                    <div class="detail-value">8 Ağustos 2026</div>
                 </div>
-                
                 <div class="event-detail">
-                    <div class="detail-label">🕐 Saat</div>
-                    <div class="detail-value">18:00 - 24:00</div>
+                    <div class="detail-label">Saat</div>
+                    <div class="detail-value">19:00</div>
                 </div>
-                
                 <div class="event-detail">
-                    <div class="detail-label">📍 Mekan</div>
-                    <div class="detail-value">
-                        Manyas Belediyesi<br>Düğün Salonu<br>Balıkesir
-                    </div>
+                    <div class="detail-label">Mekan</div>
+                    <div class="detail-value">İlgili Mekan</div>
                 </div>
-
-                <button class="map-button" onclick="openMap('Manyas Belediyesi Dugun Salonu Balikesir')">
-                    📍 Haritada Gör
-                </button>
+                <button class="map-button" onclick="window.open('https://maps.google.com', '_blank')">Haritada Gör</button>
             </div>
         </div>
 
         <div class="family-section">
-            <h2>📞 İletişim Bilgileri</h2>
+            <h2>📞 İletişim</h2>
             <div class="family-grid">
                 <div class="family-card">
-                    <div class="family-name">Tahsin Erdoğdu</div>
+                    <div class="family-name">Selin Erdoğdu</div>
                     <div class="family-phone">
                         <span class="phone-icon">☎️</span>
-                        <a href="tel:+905383483012">0538 348 30 12</a>
+                        <a href="tel:+905438897607">0543 889 76 07</a>
                     </div>
                 </div>
 
                 <div class="family-card">
-                    <div class="family-name">Halil Çetin</div>
+                    <div class="family-name">Muhammet Çetin</div>
                     <div class="family-phone">
                         <span class="phone-icon">☎️</span>
-                        <a href="tel:+905373040728">0537 304 07 28</a>
+                        <a href="tel:+905524431997">0552 443 19 97</a>
                     </div>
                 </div>
             </div>
@@ -804,28 +592,23 @@
     </div>
 
     <footer>
-        <p>✨ Sevgiyle Davet Ediyoruz ✨</p>
+        <p>Sevgiyle davet ediyoruz ✨</p>
     </footer>
 
-    <button class="audio-control" id="audioToggle" onclick="toggleAudio()" title="Müziği Aç/Kapat">
+    <!-- Ses Kontrolü Butonu -->
+    <button class="audio-control" onclick="toggleAudio()" id="audioControl">
         <span id="audioIcon">🔊</span>
     </button>
 
-    <audio id="audioPlayer" loop>
-        <source src="https://open.spotify.com/track/5Cjs5q9HXxbGLag9IxeYjK" type="audio/mpeg">
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
 
     <script>
         let audioPlaying = false;
-        const audio = document.getElementById('audioPlayer');
-
-        function openMap(location) {
-            const encodedLocation = encodeURIComponent(location);
-            const googleMapsUrl = `https://www.google.com/maps/search/${encodedLocation}`;
-            window.open(googleMapsUrl, '_blank');
-        }
 
         function toggleAudio() {
+            const audio = document.getElementById('backgroundMusic');
             const icon = document.getElementById('audioIcon');
 
             if (!audioPlaying) {
@@ -842,37 +625,15 @@
             }
         }
 
-        function updateCountdown() {
-            const weddingDate = new Date('2026-08-08T14:30:00').getTime();
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
-            if (distance < 0) {
-                document.getElementById('days').textContent = '0';
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
-                document.getElementById('seconds').textContent = '00';
-            }
-        }
-
+        // Pembe çiçekleri oluştur
         function createFallingLeaves() {
             const container = document.getElementById('fallingLeavesContainer');
-            const leafCount = 8;
+            const leafCount = 6;
 
             for (let i = 0; i < leafCount; i++) {
                 const leaf = document.createElement('div');
                 leaf.classList.add('leaf');
-                
+
                 const randomLeft = Math.random() * 100;
                 const randomDelay = Math.random() * 15;
                 const randomDuration = 12 + Math.random() * 8;
@@ -880,40 +641,16 @@
                 leaf.style.left = randomLeft + '%';
                 leaf.style.animationDelay = randomDelay + 's';
                 leaf.style.animationDuration = randomDuration + 's';
-                leaf.style.animation = `fall ${randomDuration}s linear infinite`;
 
                 container.appendChild(leaf);
             }
         }
 
-        function createParticles() {
-            const container = document.getElementById('particlesContainer');
-            const particleCount = 50;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                const randomLeft = Math.random() * 100;
-                const randomDelay = Math.random() * 20;
-                const randomDuration = 20 + Math.random() * 10;
-
-                particle.style.left = randomLeft + '%';
-                particle.style.bottom = '-10px';
-                particle.style.animationDelay = randomDelay + 's';
-                particle.style.animationDuration = randomDuration + 's';
-
-                container.appendChild(particle);
-            }
-        }
-
+        // Sayfa yüklendiğinde çiçekleri oluştur
         window.addEventListener('load', function() {
             createFallingLeaves();
-            createParticles();
-            updateCountdown();
-            
-            setInterval(updateCountdown, 1000);
-            
+
+            // Müziği otomatik başlat (4 saniye sonra)
             setTimeout(() => {
                 toggleAudio();
             }, 4000);
