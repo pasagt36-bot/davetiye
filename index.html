@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SelinNur & Muhammet - Davetiye</title>
+  <title>Selin Nur & Muhammet - Davetiye</title>
 
   <!-- Fontlar -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -14,8 +14,10 @@
       --white:#ffffff;
       --gold:#d4af37;
       --bg-gradient: linear-gradient(180deg, rgba(255,230,240,1) 0%, rgba(255,250,250,1) 60%);
-      --glass: rgba(255,255,255,0.75);
+      --glass: rgba(255,255,255,0.85);
       --accent: rgba(212,175,55,0.95);
+      --muted:#7a6a6a;
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
     html,body{
       height:100%;
@@ -41,72 +43,76 @@
     }
 
     header{
-      margin-top:28px;
+      margin-top:18px;
       text-align:center;
       z-index:5;
     }
     .names{
-      font-family: "Great Vibes", cursive;
-      font-size:48px;
+      font-family: 'Playfair Display', serif;
+      font-weight:700;
+      font-size:52px;
       color:var(--accent);
       letter-spacing:1px;
-      text-shadow: 0 6px 12px rgba(212,175,55,0.12);
       margin:0;
       line-height:1;
+      text-transform:uppercase;
+      -webkit-font-smoothing:antialiased;
+      text-shadow: 0 8px 26px rgba(212,175,55,0.08);
     }
     .subtitle{
       margin-top:6px;
-      color:#8b7a7a;
-      font-weight:500;
-      font-size:14px;
+      color:var(--muted);
+      font-weight:600;
+      font-size:13px;
     }
 
     main.card{
       margin-top:18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.9));
-      border-radius:16px;
-      padding:16px;
-      box-shadow:0 8px 30px rgba(0,0,0,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.96));
+      border-radius:18px;
+      padding:18px;
+      box-shadow:var(--card-shadow);
       backdrop-filter: blur(6px);
       z-index:5;
+      border: 1px solid rgba(212,175,55,0.06);
     }
 
     .event{
-      padding:12px 8px;
+      padding:14px 10px;
       border-radius:12px;
-      margin-bottom:12px;
-      background: linear-gradient(90deg, rgba(255,240,247,0.6), rgba(255,255,255,0.4));
-      border: 1px solid rgba(212,175,55,0.08);
+      margin-bottom:14px;
+      background: linear-gradient(90deg, rgba(255,240,247,0.65), rgba(255,255,255,0.45));
+      border: 1px solid rgba(212,175,55,0.06);
     }
     .event h3{
       margin:0;
-      font-size:16px;
+      font-size:17px;
       color: #b63b7a;
-      font-weight:700;
+      font-weight:800;
     }
     .meta{
       margin-top:8px;
-      font-size:13px;
-      color:#5a4b4b;
+      font-size:14px;
+      color:var(--muted);
     }
     .location-row{
       display:flex;
       gap:8px;
-      margin-top:10px;
+      margin-top:12px;
     }
     .btn{
       flex:1;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:10px 12px;
-      border-radius:10px;
+      padding:12px 14px;
+      border-radius:12px;
       border:none;
-      font-weight:600;
-      font-size:14px;
+      font-weight:700;
+      font-size:15px;
       color:var(--white);
       background: linear-gradient(90deg,var(--pink),var(--accent));
-      box-shadow: 0 6px 18px rgba(212,175,55,0.12);
+      box-shadow: 0 8px 18px rgba(212,175,55,0.12);
       text-decoration:none;
     }
     .btn.map{
@@ -120,11 +126,11 @@
     .countdowns{
       display:flex;
       gap:8px;
-      margin-top:10px;
+      margin-top:12px;
     }
     .cd{
       flex:1;
-      background:rgba(255,255,255,0.95);
+      background:rgba(255,255,255,0.98);
       border-radius:10px;
       padding:8px;
       text-align:center;
@@ -132,10 +138,10 @@
     }
     .cd .num{
       font-size:18px;
-      font-weight:700;
+      font-weight:800;
       color:#b4427f;
     }
-    .cd .label{font-size:11px;color:#7a6a6a;margin-top:4px;}
+    .cd .label{font-size:11px;color:var(--muted);margin-top:4px;}
 
     /* Aile listesi footer */
     footer{
@@ -156,19 +162,19 @@
       justify-content:space-between;
       align-items:center;
       gap:8px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+      background: linear-gradient(90deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96));
       padding:10px;
       border-radius:10px;
       border:1px solid rgba(212,175,55,0.06);
     }
-    .member .name{font-weight:600;color:#6b4353;}
-    .member a{color:var(--accent);text-decoration:none;font-weight:700;}
+    .member .name{font-weight:700;color:#6b4353;}
+    .member a{color:var(--accent);text-decoration:none;font-weight:800;}
 
     /* Footer small */
     .host{
       margin-top:12px;
       text-align:center;
-      color:#8b6d6d;
+      color:var(--muted);
       font-size:12px;
     }
 
@@ -190,7 +196,7 @@
     /* Responsive tweaks */
     @media(min-width:800px){
       .wrap{ max-width:760px; padding:36px; }
-      .names{ font-size:88px; }
+      .names{ font-size:96px; }
       .card{ padding:26px; }
     }
   </style>
@@ -202,7 +208,7 @@
     <div id="petal-root" aria-hidden="true"></div>
 
     <header>
-      <h1 class="names">SELINNUR & MUHAMMET</h1>
+      <h1 class="names">SELİN NUR & MUHAMMET</h1>
       <div class="subtitle">Sizi sevgiyle bekliyoruz — Davetimiz</div>
     </header>
 
@@ -210,10 +216,10 @@
       <section class="event" id="nikah">
         <h3>Nikah Töreni</h3>
         <div class="meta">Tarih: 08.08.2026 • Saat: 14:30</div>
-        <div class="meta" style="margin-top:6px;font-weight:600">Mekan: İstanbul — Bahçelievler Belediyesi Kongre ve Nikah Sarayı</div>
+        <div class="meta" style="margin-top:6px;font-weight:700">Mekan: İstanbul — Bahçelievler Belediyesi Kongre ve Nikah Sarayı</div>
         <div class="location-row">
           <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Bah%C3%A7elievler+Kongre+ve+Nikah+Saray%C4%B1+%C4%B0stanbul" target="_blank" rel="noopener" aria-label="Bahçelievler Kongre ve Nikah Sarayı Haritada Aç">Haritada Aç</a>
-          <a class="btn call" href="tel:+905383483012" aria-label="Ara: Tahsin Erdo1fdu">Ara</a>
+          <a class="btn call" href="tel:+905383483012" aria-label="Ara: Tahsin Erdoğdu">Ara</a>
         </div>
 
         <div class="countdowns" style="margin-top:10px;">
@@ -235,10 +241,10 @@
       <section class="event" id="dugun">
         <h3>Düğün ve Davet</h3>
         <div class="meta">Tarih: 11.09.2026 • Saat: 18:00 — 24:00</div>
-        <div class="meta" style="margin-top:6px;font-weight:600">Mekan: Balıkesir — Manyas Belediyesi Düğün Salonu</div>
+        <div class="meta" style="margin-top:6px;font-weight:700">Mekan: Balıkesir — Manyas Belediyesi Düğün Salonu</div>
         <div class="location-row">
           <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Manyas+Belediyesi+D%C3%BC%C4%9Fn+Salonu+Manyas+Bal%C4%B1kesir" target="_blank" rel="noopener" aria-label="Manyas Belediyesi Düğün Salonu Haritada Aç">Haritada Aç</a>
-          <a class="btn call" href="tel:+905438897607" aria-label="Ara: Selin Erdo1fdu">Ara</a>
+          <a class="btn call" href="tel:+905438897607" aria-label="Ara: Selin Erdoğdu">Ara</a>
         </div>
 
         <div class="countdowns" style="margin-top:10px;">
@@ -257,31 +263,31 @@
         </div>
       </section>
 
-      <!-- RSVP / Not: Bu örnek statik. İstersen rsvp formu eklerim. -->
+      <!-- RSVP / Not: Bu örnek statik. İstersen rsvp formu ekleyim. -->
     </main>
 
     <footer>
-      <div style="font-size:13px;font-weight:700;color:#7a455c;margin-bottom:10px">Aile Büyükleri</div>
+      <div style="font-size:13px;font-weight:800;color:#7a455c;margin-bottom:10px">Aile Büyükleri</div>
       <div class="family">
         <div class="member">
-          <div class="name">Tahsin Erdo1fdu</div>
+          <div class="name">Tahsin Erdoğdu</div>
           <a href="tel:+905383483012">0538 348 30 12</a>
         </div>
         <div class="member">
-          <div class="name">Selin Erdo1fdu</div>
+          <div class="name">Selin Erdoğdu</div>
           <a href="tel:+905438897607">0543 889 76 07</a>
         </div>
         <div class="member">
-          <div class="name">Halil  c7etin</div>
+          <div class="name">Halil Çetin</div>
           <a href="tel:+905373040728">0537 304 07 28</a>
         </div>
         <div class="member">
-          <div class="name">Muhammet  c7etin</div>
+          <div class="name">Muhammet Çetin</div>
           <a href="tel:+905524431997">0552 443 19 97</a>
         </div>
       </div>
 
-      <div class="host">Hesap: <strong style="color:var(--accent)">pasagt36-bot</strong> • Davet: Mobille uyumlu</div>
+      <div class="host">Hesap: <strong style="color:var(--accent)">pasagt36-bot</strong> • Davet: Mobil uyumlu</div>
     </footer>
   </div>
 
@@ -313,7 +319,6 @@
         if(minsEl) minsEl.innerText = mins;
       }
 
-      // Nikah kısım elemanları IDs: cd-n-days, cd-n-hours, cd-n-mins
       const cdN = {
         'days': document.getElementById('cd-n-days'),
         'hours': document.getElementById('cd-n-hours'),
@@ -325,7 +330,6 @@
         'mins': document.getElementById('cd-d-mins')
       };
 
-      // update generic
       (function updateOne(target, els){
         const diff = target - now;
         if(diff <= 0){
@@ -381,33 +385,23 @@
       const dur = rand(8,18);
       el.style.animation = `fall ${dur}s linear`;
       el.style.animationDelay = rand(-10,0)+'s';
-      // horizontal drift using transform translateX via additional animation
       const drift = rand(-20,20);
       el.style.setProperty('--drift', drift + 'px');
       el.style.willChange = 'transform, opacity';
       petalRoot.appendChild(el);
 
-      // Remove after animation ends and respawn
       el.addEventListener('animationend', ()=> {
         el.remove();
-        // spawn new
         setTimeout(makePetal, rand(200,1500));
       });
     }
 
-    // Başlangıçta çoklu petal oluştur
     for(let i=0;i<18;i++){ makePetal(); }
 
-    // Arka plan hafif altın ışıltı için body gradient ekle (statik)
-    // (Zaten CSS'te yapıldı)
-
-    // Klavye erişimi için harita butonlarına title ekle
     document.querySelectorAll('.btn.map').forEach(b=>{
-      const t = b.closest('.event').querySelector('.meta');
       b.title = b.getAttribute('aria-label') || 'Haritada aç';
     });
 
-    // Dokunmatik ve mobil için hızlı scroll to top on tap of title
     document.querySelector('.names').addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
   </script>
 </body>
